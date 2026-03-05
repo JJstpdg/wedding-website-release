@@ -152,7 +152,8 @@
   content: '♡';
   position: absolute;
   font-size: clamp(3.8rem, 9vw, 5.5rem);
-  font-weight: 200;
+  font-weight: 400;
+  font-family: 'Patrick Hand', cursive; /* рисованный стиль */
   color: #c0392b;
   opacity: 0.35;
   top: 50%;
@@ -161,6 +162,15 @@
   pointer-events: none;
   z-index: -1;
   animation: fadeHeart 3s ease-in-out infinite;
+}
+
+    .highlight-23::after {
+  text-shadow:
+    1px 1px 0 #c0392b,
+   -1px -1px 0 #c0392b,
+    1px -1px 0 #c0392b,
+   -1px 1px 0 #c0392b,
+    0 0 1px #c0392b;
 }
 
 @keyframes fadeHeart {
