@@ -142,20 +142,20 @@
     }
 
     .highlight-23 {
-      position: relative;
-      color: #4a3c2f !important;
-      font-weight: 700;
-      z-index: 2;
-    }
+  position: relative; /* уже есть */
+  display: flex;      /* добавляем flex для центрирования */
+  justify-content: center;
+  align-items: center;
+}
 
-    .highlight-23::after {
+.highlight-23::after {
   content: url('Vector.svg');
-  width: clamp(3rem, 8vw, 4.5rem);  /* чуть меньше, чем раньше */
-  height: clamp(3rem, 8vw, 4.5rem);
+  width: clamp(3rem, 6vw, 4rem);   /* немного меньше, чтобы не перекрывало цифру */
+  height: clamp(3rem, 6vw, 4rem);
   position: absolute;
-  top: 45%;   /* подняли выше, раньше было 50% */
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.9); /* scale можно оставить или подкорректировать */
+  top: 50%;     /* центр по вертикали */
+  left: 50%;    /* центр по горизонтали */
+  transform: translate(-50%, -50%); /* точно центрируем */
   pointer-events: none;
   z-index: -1;
   opacity: 0.35;
