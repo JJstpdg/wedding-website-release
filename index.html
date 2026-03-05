@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Алия & Стас — 22–23 мая 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Special+Elite&family=Allura&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #ffffff;
+      color: #3e2f1f;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: url('https://www.transparenttextures.com/patterns/cream-paper.png') repeat,
+                  url('https://www.transparenttextures.com/patterns/noisy.png') repeat;
+      background-blend-mode: multiply;
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 4vh auto 6vh;
+      padding: 6vh 5vw 8vh;
+      text-align: center;
+      background: #ffffff;
+      backdrop-filter: blur(4px);
+      border: 2px solid #c7b29e;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.08),
+                  inset 0 0 20px rgba(199,178,158,0.1);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .wedding-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: clamp(2.4rem, 8vw, 4.5rem);
+      color: #6b5240;
+      margin: 1.5em 0 1.2em;
+      letter-spacing: 0.12em;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 0.3em;
+    }
+
+    .wedding-light {
+      font-size: 0.58em;
+      opacity: 0.65;
+      color: #6b5240;
+    }
+
+    .wedding-main {
+      font-size: 0.85em;
+      color: #6b5240;
+      margin-top: -0.25em;
+      opacity: 1;
+    }
+
+    .hero-photo {
+      margin: 2em 0 5em;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      filter: none;
+    }
+
+    .divider {
+      width: 100px;
+      height: 1.5px;
+      background: linear-gradient(to right, transparent, #c7b29e, transparent);
+      margin: 2em auto;
+    }
+
+    .calendar-wrapper {
+      margin: 3em 0 2em;
+      width: 100%;
+    }
+
+    .weekdays {
+      font-family: 'Special Elite', cursive;
+      font-size: clamp(0.95rem, 3.8vw, 1.15rem);
+      letter-spacing: 0.45em;
+      color: #6b5240;
+      margin-bottom: 0.4em;
+      text-transform: uppercase;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px 10px;
+      max-width: 100%;
+    }
+
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px 10px;
+      max-width: 100%;
+      width: 100%;
+      margin: 0 auto;
+      font-size: clamp(1.7rem, 6.5vw, 2.2rem);
+      color: #4a3c2f;
+    }
+
+    .day {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      font-weight: 500;
+      z-index: 1;
+    }
+
+    .highlight-23 {
+      position: relative;
+      color: #4a3c2f !important;
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    .highlight-23::after {
+      content: '♡';
+      position: absolute;
+      font-size: clamp(3.8rem, 9vw, 5.5rem);
+      font-weight: 200;
+      color: #c0392b;
+      opacity: 0.35;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: -1;
+      animation: fadeHeart 3s ease-in-out infinite;
+    }
+
+    @keyframes fadeHeart {
+      0%   { opacity: 0.35; transform: translate(-50%, -50%) scale(0.9); }
+      50%  { opacity: 0.7;  transform: translate(-50%, -50%) scale(1.15); }
+      100% { opacity: 0.35; transform: translate(-50%, -50%) scale(0.9);   }
+    }
+
+    .date-overlay {
+      position: relative;
+      margin: 3.5em 0 5em;
+      height: 220px;
+    }
+
+    .year-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Allura', cursive;
+      font-size: clamp(12rem, 35vw, 18rem);
+      color: #6b5240;
+      opacity: 0.3;
+      letter-spacing: -0.05em;
+      z-index: 1;
+    }
+
+    .month-year {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) translateY(-25px);
+      font-family: 'Special Elite', cursive;
+      font-size: clamp(3.5rem, 10vw, 5rem);
+      color: #4a3c2f;
+      letter-spacing: 0.15em;
+      z-index: 2;
+    }
+
+    .dear-friends {
+      margin: 1.5em 0 0.5em;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      color: #4a3c2f;
+      letter-spacing: 0.02em;
+    }
+
+    .invitation-text {
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+      color: #6b5240;
+      max-width: 700px;
+      margin: 0 auto 3em;
+      line-height: 1.5;
+    }
+
+    .timing-block {
+      margin: 2em 0 4em;
+      text-align: center;
+    }
+
+    .timing-title {
+      font-family: 'Special Elite', cursive;
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      color: #6b5240;
+      margin: 2em 0 1.2em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .timing-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .timing-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.3em;
+    }
+
+    .timing-time {
+      font-family: 'Allura', cursive;
+      font-weight: 400;
+      font-size: clamp(2.8rem, 8vw, 4.5rem);
+      color: #6b5240;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 2s ease-out, transform 2s ease-out;
+    }
+
+    .timing-time.visible {
+      opacity: 0.3;
+      transform: translateY(0);
+    }
+
+    .timing-desc {
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+      color: #6b5240;
+      line-height: 1.4;
+    }
+
+    .dresscode {
+      font-family: 'Special Elite', cursive;
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      color: #6b5240;
+      margin: 2em 0 1em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dresscode-text,
+    .dresscode-extra {
+      font-size: clamp(1.05rem, 4vw, 1.2rem);
+      color: #4a3c2f;
+      max-width: 540px;
+      margin: 0 auto 1.5em;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .dresscode-extra {
+      margin-top: 1.5em;
+    }
+
+    .dresscode-warning {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+      color: #8b7355;
+      margin: 2em 0 3em;
+      font-style: italic;
+      letter-spacing: 0.01em;
+    }
+
+    .fabric-swatches {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 2em 0 4em;
+    }
+
+    .swatch {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 2px solid #c7b29e;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .swatch-1 { background-image: url('https://i.postimg.cc/26xZQpNB/bezevyj-2.png'); }
+    .swatch-2 { background-image: url('https://i.postimg.cc/C5Pn2jK6/bezevyj.png'); }
+    .swatch-3 { background-image: url('https://i.postimg.cc/JnTh7RWb/koricnevyj.png'); }
+    .swatch-4 { background-image: url('https://i.postimg.cc/xj4dWjRw/zelenyj.png'); }
+    .swatch-5 { background-image: url('https://i.postimg.cc/GhTpr0gk/izumrudnyj.png'); }
+
+    .extra-photos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin: 3em 0 5em;
+    }
+
+    .photo-row {
+      display: flex;
+      justify-content: center;
+      gap: -20px;
+      flex-wrap: nowrap;
+    }
+
+    .extra-photo {
+      width: 100px;
+      height: auto;
+      object-fit: contain;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+      mask-image: radial-gradient(circle at 50% 50%, black 78%, transparent 96%);
+      -webkit-mask-image: radial-gradient(circle at 50% 50%, black 78%, transparent 96%);
+      transition: all 0.4s;
+      z-index: 1;
+    }
+
+    .extra-photo:hover {
+      transform: scale(1.5) translateY(-10px);
+      mask-image: radial-gradient(circle at 50% 50%, black 90%, transparent 99%);
+      -webkit-mask-image: radial-gradient(circle at 50% 50%, black 90%, transparent 99%);
+      z-index: 10;
+    }
+
+    .special-block {
+      margin: 4em 0 5em;
+      padding: 0.2em 2em 2em;
+      background: transparent;
+      border: 1px solid #c7b29e;
+      border-radius: 12px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .special-title {
+      font-family: 'Special Elite', cursive;
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      color: #6b5240;
+      margin: 0.5em 0 1em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .special-text {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: #4a3c2f;
+    }
+
+    .chat-group-block {
+      margin: 4em 0 5em;
+      padding: 1.5em;
+      background: transparent;
+      border: 0.5px solid #c7b29e;
+      border-radius: 12px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 180px;
+    }
+
+    .location-title {
+      font-family: 'Special Elite', cursive;
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      color: #6b5240;
+      margin: 0.5em 0 1em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .location-section {
+      margin: 5em 0 6em;
+      text-align: center;
+    }
+
+    .location-address {
+      font-size: 1.2rem;
+      color: #6b5240;
+      margin: 1em 0 2em;
+      line-height: 1.4;
+    }
+
+    .location-photo {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto 2em;
+      border-radius: 8px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      display: block;
+    }
+
+    .map-button {
+      display: inline-block;
+      padding: 0.9em 2.5em;
+      background: #8b7355;
+      color: #f5f0e6;
+      text-decoration: none;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .map-button:hover {
+      background: #6b5240;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .chat-button {
+      display: inline-block;
+      padding: 1em 2.5em;
+      background: #8b7355;
+      color: #f5f0e6;
+      text-decoration: none;
+      font-size: 1.15rem;
+      border-radius: 6px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 1.5em 0 3em;
+    }
+
+    .chat-button:hover {
+      background: #6b5240;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .closing-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      color: #6b5240;
+      margin: 2em 0 4em;
+      font-style: italic;
+      letter-spacing: 0.02em;
+    }
+
+    .final-photo {
+      margin: 4em 0 6em;
+      text-align: center;
+    }
+
+    .final-photo img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+    }
+
+    .footer {
+      margin-top: 5vh;
+      font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+      color: #6b5240;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="wedding-title">
+      <span class="wedding-light">THE</span>
+      <span class="wedding-main">WEDDING</span>
+      <span class="wedding-light">DAY</span>
+    </div>
+
+    <div class="hero-photo">
+      <img src="https://i.postimg.cc/j2MVjysV/Magic-Eraser-260304-002611.png" alt="Алия и Стас">
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="calendar-wrapper">
+      <div class="weekdays">
+        <div>ПН</div>
+        <div>ВТ</div>
+        <div>СР</div>
+        <div>ЧТ</div>
+        <div>ПТ</div>
+        <div>СБ</div>
+        <div>ВС</div>
+      </div>
+
+      <div class="days-grid">
+        <div class="day">18</div>
+        <div class="day">19</div>
+        <div class="day">20</div>
+        <div class="day">21</div>
+        <div class="day">22</div>
+        <div class="day highlight-23">23</div>
+        <div class="day">24</div>
+      </div>
+    </div>
+
+    <div class="date-overlay">
+      <div class="year-bg">2026</div>
+      <div class="month-year">МАЙ</div>
+    </div>
+
+    <div class="dear-friends">родные и близкие!</div>
+    <p class="invitation-text">приглашаем вас разделить с нами радостный день и отпраздновать начало новой главы нашего жизненного пути</p>
+
+    <div class="timing-block">
+      <div class="timing-title">Тайминг дня</div>
+      <div class="timing-list">
+        <div class="timing-item">
+          <div class="timing-time">15:00 – 15:30</div>
+          <div class="timing-desc">сбор гостей и фуршет</div>
+        </div>
+        <div class="timing-item">
+          <div class="timing-time">15:30 – 16:30</div>
+          <div class="timing-desc">торжественная церемония</div>
+        </div>
+        <div class="timing-item">
+          <div class="timing-time">16:30 – 22:00</div>
+          <div class="timing-desc">банкет</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dresscode">
+      <div class="section-title">Dress code</div>
+    </div>
+
+    <div class="dresscode-text">
+      Мы очень стараемся и хотим, чтобы фотографии с праздника радовали глаз не только вашим присутствием на них, но и стильной картинкой, поэтому очень просим придерживаться цветовой палитры ♡
+    </div>
+
+    <div class="dresscode-extra">
+      Мужчины при выборе костюма помимо основных цветов могут использовать чёрный и серый, но с добавлением элементов в цветах свадьбы (галстук, бабочка, носки, ...)<br><br>
+      <span>Если вы приходите вдвоём — парные луки приветствуются!</span>
+    </div>
+
+    <div class="fabric-swatches">
+      <div class="swatch swatch-1"></div>
+      <div class="swatch swatch-2"></div>
+      <div class="swatch swatch-3"></div>
+      <div class="swatch swatch-4"></div>
+      <div class="swatch swatch-5"></div>
+    </div>
+
+    <div class="extra-photos">
+      <div class="photo-row first">
+        <img src="https://i.postimg.cc/4dK33rNC/d1.png" alt="Фото 1" class="extra-photo">
+        <img src="https://i.postimg.cc/jdMvT8vV/d2.png" alt="Фото 2" class="extra-photo">
+        <img src="https://i.postimg.cc/3xs8wQZH/d3.png" alt="Фото 3" class="extra-photo">
+        <img src="https://i.postimg.cc/GtmrfLb4/d4.png" alt="Фото 4" class="extra-photo">
+      </div>
+
+      <div class="photo-row second">
+        <img src="https://i.postimg.cc/1RnNXvyT/m1.png" alt="Фото 5" class="extra-photo">
+        <img src="https://i.postimg.cc/7PFJ2S65/m2.png" alt="Фото 6" class="extra-photo">
+        <img src="https://i.postimg.cc/TY2p8xtg/m3.png" alt="Фото 7" class="extra-photo">
+        <img src="https://i.postimg.cc/RhKFRbFK/m4.png" alt="Фото 8" class="extra-photo">
+        <img src="https://i.postimg.cc/xCyT7pHp/m5.png" alt="Фото 9" class="extra-photo">
+      </div>
+    </div>
+
+    <div class="dresscode-warning">
+      Да, тех, кто придет не по дресс коду, не пустим ♡
+    </div>
+
+    <img src="https://i.postimg.cc/FKqhTHhq/Chat-GPT-Image-3-mar-2026-g-22-15-35.png" alt="Дополнительная фотография" style="width:100%; max-width:350px; height:auto; margin:2em auto; display:block; border:none; box-shadow:none;">
+
+    <div class="special-block" style="margin-top: 1em; padding-top: 0.2em;">
+      <div class="special-title">Ещё один нюанс</div>
+      <div class="special-text">
+        Любимые наши, после долгой подготовки к празднику и самого праздника мы хотим поехать в путешествие, поэтому не утруждайте себя выбором подарка, ваши конверты будут для нас лучшим вкладом в первый совместный отпуск в роли мужа и жены ♡
+      </div>
+    </div>
+
+    <div class="chat-group-block">
+      <div class="special-title">Чат-группа</div>
+      <div class="special-text">
+        Для вашего и нашего удобства мы создали чат в Telegram, присоединяйтесь, там будет более подробная информация и важные свадебные опросы ♡
+      </div>
+      <a href="https://t.me/+bQTFH_yaw2wwNDky" class="chat-button" target="_blank">Вступить</a>
+    </div>
+
+    <div class="location-section">
+      <div class="location-title">Будем ждать вас здесь</div>
+      <img src="https://i.postimg.cc/vmfKLJFL/5265076984151218096.jpg" alt="Garden Hall" class="location-photo">
+      <div class="location-address">
+        Garden Hall<br>
+        п. Токсово, ул. Разъезжая, 15
+      </div>
+      <a href="https://yandex.ru/maps/?text=п.%20Токсово,%20ул.%20Разъезжая,%2015" target="_blank" class="map-button">Посмотреть на карте</a>
+    </div>
+
+    <div class="final-photo">
+      <img src="https://i.postimg.cc/SNn19Bdc/Magic-Eraser-260304-004308.png" alt="Финальная фотография">
+    </div>
+
+    <div class="closing-text">
+      любим и с нетерпением ждем вас на нашем празднике ♡
+    </div>
+
+    <div class="footer">
+      <!-- футер пустой -->
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const times = document.querySelectorAll('.timing-time');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      times.forEach(time => {
+        observer.observe(time);
+      });
+    });
+  </script>
+
+</body>
+</html>
