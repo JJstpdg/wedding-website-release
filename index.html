@@ -115,23 +115,18 @@
     text-transform: uppercase;
   
     display: grid;
-    grid-template-columns: repeat(7, auto);
-    justify-content: center; /* центрирует сетку */
-    text-align: center;      /* центрирует текст в ячейках */
-    gap: 8px 10px;
+    grid-template-columns: repeat(7, 1fr); /* одинаково с .days-grid */
+    text-align: center;                     /* центр текста внутри колонок */
+    gap: 8px;                               /* можно один gap для простоты */
     max-width: 100%;
     }
 
     .days-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 8px 10px;
-      max-width: 100%;
-      width: 100%;
-      margin: 0 auto;
-      font-size: clamp(1.7rem, 6.5vw, 2.2rem);
-      color: #4a3c2f;
-    }
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* одинаково с .weekdays */
+    gap: 8px;
+    max-width: 100%;
+  }
 
     .day {
       position: relative;
