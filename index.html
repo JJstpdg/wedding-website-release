@@ -222,14 +222,17 @@
     }
 
     .timing-title {
-      font-family: 'Lucida Calligraphy', cursive;
+     font-family: 'Lucida Calligraphy', cursive; /* системный fallback */
     font-size: clamp(0.95rem, 3.8vw, 1.15rem);
     letter-spacing: 0.45em;
     color: #6b5240;
     margin-bottom: 0.4em;
     text-transform: uppercase;
+
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, auto); /* авто-ширина для текста */
+    justify-content: center;               /* горизонтальное центрирование всей сетки */
+    text-align: center;                    /* центрирование текста в ячейках */
     gap: 8px 10px;
     max-width: 100%;
     }
