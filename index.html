@@ -107,32 +107,30 @@
     }
 
     .weekdays {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.3rem, 4vw, 2rem); /* больше минимум и максимум */
-    letter-spacing: 0.45em;
-    color: #6b5240;
-    margin-bottom: 0.4em;
-    text-transform: uppercase;
-  
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    justify-items: center;
-    gap: 0;
-  }
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 4vw, 2rem); /* адаптивный размер */
+  letter-spacing: 0.18em; /* уменьшено для кириллицы */
+  color: #6b5240;
+  margin-bottom: 0.4em;
+  text-transform: uppercase;
 
-    .days-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  justify-items: center; /* центрируем числа под днями */
+  justify-items: center; /* центрируем дни */
+  gap: 0; /* без лишних промежутков */
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center; /* центрируем числа */
   gap: 8px;
   max-width: 100%;
   font-size: clamp(1.7rem, 6.5vw, 2.2rem);
   color: #4a3c2f;
 
-  /* смещение чуть левее */
-  margin-left: -4px; /* подбирается экспериментально */
+  margin-left: 0; /* убрано ручное смещение — теперь ровно под днями */
 }
-
     .day {
       position: relative;
       display: flex;
