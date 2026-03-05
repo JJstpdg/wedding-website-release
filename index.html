@@ -142,23 +142,27 @@
     }
 
     .highlight-23 {
-  position: relative; /* уже есть */
-  display: flex;      /* добавляем flex для центрирования */
+  position: relative;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.highlight-23::after {
-  content: url('Vector.svg');
-  width: clamp(3rem, 6vw, 4rem);   /* немного меньше, чтобы не перекрывало цифру */
-  height: clamp(3rem, 6vw, 4rem);
+.highlight-23 .number {
+  z-index: 2; /* число поверх сердца */
+}
+
+.highlight-23 .heart {
   position: absolute;
-  top: 50%;     /* центр по вертикали */
-  left: 50%;    /* центр по горизонтали */
-  transform: translate(-50%, -50%); /* точно центрируем */
-  pointer-events: none;
-  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: clamp(2.5rem, 6vw, 3.5rem);  /* адаптивный размер */
+  height: clamp(2.5rem, 6vw, 3.5rem);
+  transform: translate(-50%, -50%);
+  background: url('Vector.svg') no-repeat center / contain;
   opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
   animation: fadeHeart 3s ease-in-out infinite;
 }
 
