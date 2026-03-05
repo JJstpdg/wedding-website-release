@@ -107,17 +107,20 @@
     }
 
     .weekdays {
-    font-family: 'Lucida Calligraphy', 'Cursive', cursive;
+    font-family: 'Allura', cursive; /* вместо Lucida Calligraphy */
     font-size: clamp(0.95rem, 3.8vw, 1.15rem);
     letter-spacing: 0.45em;
     color: #6b5240;
     margin-bottom: 0.4em;
     text-transform: uppercase;
+  
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, auto);
+    justify-content: center;
+    text-align: center;
     gap: 8px 10px;
     max-width: 100%;
-    }
+  }
 
     .days-grid {
       display: grid;
