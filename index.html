@@ -329,40 +329,34 @@
     .swatch-5 { background-image: url('https://i.postimg.cc/GhTpr0gk/izumrudnyj.png'); }
 
     .extra-photos {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      margin: 3em 0 5em;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 3em 0 5em;
+}
 
-    .photo-row {
+.photo-row {
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;     /* всегда в одну линию */
-  gap: 8px;              /* промежуток между фото */
-  overflow-x: auto;      /* если уж совсем узкий экран — можно скроллить */
+  flex-wrap: nowrap;   /* всегда в одну линию */
+  gap: 8px;            /* промежуток между фото */
 }
 
 .extra-photo {
-  flex: 1 1 auto;        /* фото сжимаются и растут пропорционально */
-  max-width: 18%;        /* примерно 5 фото в ряд */
+  width: 18%;           /* 5 фото в ряд */
   height: auto;
   object-fit: contain;
   border: none;
   box-shadow: none;
   background: transparent;
-  mask-image: radial-gradient(circle at 50% 50%, black 78%, transparent 96%);
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 78%, transparent 96%);
-  transition: all 0.4s;
+  transition: transform 0.4s;
   z-index: 1;
 }
 
 .extra-photo:hover {
-  transform: scale(1.5) translateY(-10px);
-  mask-image: radial-gradient(circle at 50% 50%, black 90%, transparent 99%);
-  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 90%, transparent 99%);
-  z-index: 10;
+  transform: scale(1.4);  /* плавное увеличение */
+  z-index: 10;            /* выводим поверх соседних фото */
 }
    /* Общая рамка для визуального единообразия */
 .special-block,
