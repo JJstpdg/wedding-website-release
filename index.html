@@ -108,18 +108,17 @@
 
     .weekdays {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(0.95rem, 3.8vw, 1.15rem);
+    font-size: clamp(1.3rem, 4vw, 2rem); /* больше минимум и максимум */
     letter-spacing: 0.45em;
     color: #6b5240;
     margin-bottom: 0.4em;
     text-transform: uppercase;
   
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* одинаково с .days-grid */
-    text-align: center;                     /* центр текста внутри колонок */
-    gap: 8px;                               /* можно один gap для простоты */
-    max-width: 100%;
-    }
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 8px;
+}
 
     .days-grid {
     display: grid;
