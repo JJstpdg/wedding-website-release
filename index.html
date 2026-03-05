@@ -149,13 +149,13 @@
     }
 
     .highlight-23::after {
-  content: url('Vector.svg'); /* просто имя файла, так как он в той же папке что index.html */
-  width: clamp(3.8rem, 9vw, 5.5rem);
-  height: clamp(3.8rem, 9vw, 5.5rem);
+  content: url('Vector.svg');
+  width: clamp(3rem, 8vw, 4.5rem);  /* чуть меньше, чем раньше */
+  height: clamp(3rem, 8vw, 4.5rem);
   position: absolute;
-  top: 50%;
+  top: 45%;   /* подняли выше, раньше было 50% */
   left: 50%;
-  transform: translate(-50%, -46%);
+  transform: translate(-50%, -50%) scale(0.9); /* scale можно оставить или подкорректировать */
   pointer-events: none;
   z-index: -1;
   opacity: 0.35;
