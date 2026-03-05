@@ -149,20 +149,19 @@
     }
 
     .highlight-23::after {
-      content: '♡';
-      position: absolute;
-      font-size: clamp(3.8rem, 9vw, 5.5rem);
-      font-weight: 200;
-      color: #c0392b;
-      opacity: 0.35;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      z-index: -1;
-      animation: fadeHeart 3s ease-in-out infinite;
-    }
-
+  content: '♡';
+  position: absolute;
+  font-size: clamp(3.8rem, 9vw, 5.5rem);
+  font-weight: 200;
+  color: #c0392b;
+  opacity: 0.35;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -42%); /* смещаем сердечко чуть ниже */
+  pointer-events: none;
+  z-index: -1;
+  animation: fadeHeart 3s ease-in-out infinite;
+}
     @keyframes fadeHeart {
       0%   { opacity: 0.35; transform: translate(-50%, -50%) scale(0.9); }
       50%  { opacity: 0.7;  transform: translate(-50%, -50%) scale(1.15); }
