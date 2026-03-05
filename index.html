@@ -149,24 +149,17 @@
     }
 
     .highlight-23::after {
-  content: '';
+  content: '♡';
   position: absolute;
+  font-size: clamp(3.8rem, 9vw, 5.5rem);
+  font-weight: 200;
+  color: #c0392b;
+  opacity: 0.35;
   top: 50%;
   left: 50%;
-  width: clamp(3rem, 9vw, 5rem);
-  height: clamp(3rem, 9vw, 5rem);
   transform: translate(-50%, -46%);
-  border: 2px solid #c0392b;
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  background: none;
-  clip-path: polygon(
-    50% 0%, 61% 15%, 75% 15%, 85% 25%,
-    85% 40%, 75% 55%, 50% 85%, 25% 55%,
-    15% 40%, 15% 25%, 25% 15%, 39% 15%
-  );
   pointer-events: none;
   z-index: -1;
-  opacity: 0.35;
   animation: fadeHeart 3s ease-in-out infinite;
 }
 
